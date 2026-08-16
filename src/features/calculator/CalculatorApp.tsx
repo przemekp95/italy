@@ -62,6 +62,13 @@ const parseGross = (raw: string, locale: Locale): Money | null => {
   }
 };
 
+const formatGrossInput = (amount: Money, locale: Locale): string =>
+  new Intl.NumberFormat(locale === 'it' ? 'it-IT' : 'en-GB', {
+    useGrouping: true,
+    minimumFractionDigits: amount.minorUnits % 100n === 0n ? 0 : 2,
+    maximumFractionDigits: 2,
+  }).format(amount.toNumber());
+
 export const CalculatorApp = () => {
   const [locale, setLocale] = useState<Locale>('it');
   const [grossInput, setGrossInput] = useState('');
@@ -102,6 +109,10 @@ export const CalculatorApp = () => {
   };
 
   const changeLocale = (nextLocale: Locale) => {
+    const currentAmount = parseGross(grossInput, locale);
+    if (currentAmount) {
+      setGrossInput(formatGrossInput(currentAmount, nextLocale));
+    }
     setLocale(nextLocale);
     setError(null);
   };
