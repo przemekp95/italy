@@ -16,6 +16,8 @@ build/
 coverage/
 playwright-report/
 test-results/
+output/playwright/
+.playwright-cli/
 *.tsbuildinfo
 __pycache__/
 *.py[cod]
