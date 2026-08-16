@@ -19,11 +19,11 @@ These checkpoints were derived directly from the legal formulas before implement
 
 ## Milano exemption boundary
 
-| Taxable income | Lombardia | Milano | Total local |
-| ---: | ---: | ---: | ---: |
-| €22,999.99 | €310.90 | €0.00 | €310.90 |
-| €23,000.00 | €310.90 | €0.00 | €310.90 |
-| €23,000.01 | €310.90 | €184.00 | €494.90 |
+| Taxable income | Lombardia |  Milano | Total local |
+| -------------: | --------: | ------: | ----------: |
+|     €22,999.99 |   €310.90 |   €0.00 |     €310.90 |
+|     €23,000.00 |   €310.90 |   €0.00 |     €310.90 |
+|     €23,000.01 |   €310.90 | €184.00 |     €494.90 |
 
 With the simplified 9.19% contribution rounded before taxable income, these taxable values correspond to approximately RAL €25,327.60 / €25,327.61 / €25,327.62. This is a documented legal discontinuity, not a monotonicity defect.
 

@@ -53,14 +53,11 @@ describe('Italy 2026 tax policy', () => {
     ['39999.99', 'deduction', '0.00'],
     ['40000.00', 'deduction', '0.00'],
     ['40000.01', 'none', '0.00'],
-  ])(
-    'applies structural employee relief at %s',
-    (income, kind, expected) => {
-      const relief = ITALY_2026_POLICY.employeeRelief(euros(income));
-      expect(relief.kind).toBe(kind);
-      expect(relief.amount).toEqual(euros(expected));
-    },
-  );
+  ])('applies structural employee relief at %s', (income, kind, expected) => {
+    const relief = ITALY_2026_POLICY.employeeRelief(euros(income));
+    expect(relief.kind).toBe(kind);
+    expect(relief.amount).toEqual(euros(expected));
+  });
 
   it.each([
     ['22999.99', '0.00'],
