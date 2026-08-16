@@ -68,13 +68,9 @@ describe('CalculatorApp', () => {
     expect(screen.getByTestId('annual-net')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'English' }));
-    await user.clear(
+    expect(
       screen.getByRole('textbox', { name: /annual gross salary/i }),
-    );
-    await user.type(
-      screen.getByRole('textbox', { name: /annual gross salary/i }),
-      '40,000',
-    );
+    ).toHaveValue('40,000');
     await user.click(screen.getByRole('button', { name: 'Calculate' }));
     expect(screen.getByTestId('annual-net')).toBeInTheDocument();
   });
